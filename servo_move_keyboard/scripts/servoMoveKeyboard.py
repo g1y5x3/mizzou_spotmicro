@@ -202,7 +202,7 @@ class SpotMicroServoControl():
                     print('Final Servo Values')
                     print('--------------------')
                     for i in range(numServos):
-                        print('Servo %2i:   Min: %4i,   Center: %4i,   Max: %4i'%(i,self.servos[i]._min,self.servos[i]._center,self.servos[i]._max))                    
+                        print('Servo %2i:   Min: %4i,   Center: %4i,   Max: %4i'%(i+1,self.servos[i]._min,self.servos[i]._center,self.servos[i]._max))                    
                     break
 
                 elif userInput == 'oneServo':
@@ -233,7 +233,7 @@ class SpotMicroServoControl():
                             print('Key not in valid key commands, try again')
                         else:
                             keyDict[userInput](self.servos[nSrv])
-                            print('Servo %2i cmd: %4i'%(nSrv,self.servos[nSrv].value))
+                            print('Servo %2i cmd: %4i'%(nSrv+1,self.servos[nSrv].value))
                             self.send_servo_msg()
 
                 elif userInput == 'allServos':
